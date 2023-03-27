@@ -1,0 +1,217 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+    --clr-card-bg: hsl(300, 43%, 22%);
+    --clr-verified: hsl(333, 80%, 67%);
+
+    --clr-paragraph: hsl(303, 10%, 53%);
+    --clr-neutral: hsl(300, 24%, 96%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    /* typography */
+    --fs-regular: 1.08rem;
+    --fw-medium: 500;
+    --ff-regular: 'League Spartan', sans-serif;
+}
+
+body {
+    color: var(--clr-card-bg);
+    padding: 5rem 1.5rem;
+    text-align: center;
+    font-family: var(--ff-regular);
+    font-size: var(--fs-regular);
+    background: url(./images/bg-pattern-top-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    /* display: grid; */
+}
+
+.header {
+    margin: 0 auto;
+}
+
+.header .heading {
+    line-height: 1;
+    max-width: 19rem;
+    padding-bottom: 1.5rem;
+}
+
+.header p {
+    color: var(--clr-paragraph);
+    font-weight: 500;
+    font-size: var(--fs-regular);
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        padding: 5rem;
+    }
+    .header {
+        text-align: start;
+        max-width: 26rem;
+        margin: 0;
+    }
+
+    .header .heading {
+        font-size: 3rem;
+        max-width: 20rem;
+    }
+}
+
+/* ratings section */
+.ratings-container {
+    display: grid;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.rating-card {
+    display: grid;
+    border-radius: .5rem;
+    padding: 1rem;
+    background: var(--clr-neutral);
+}
+
+.rating-card .rating-comment {
+    font-weight: bold;
+    padding-top: .5rem;
+}
+
+.rating-img {
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    .top-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rating-card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* cards section */
+.card-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    padding: 1.7rem;
+    border-radius: .5rem;
+    background:hsl(300, 43%, 22%);
+    color: var(--clr-white);
+}
+
+.card-header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-user .card-heading {
+    font-weight: bold;
+}
+
+.card-user .card-verified {
+    color:hsl(333, 80%, 67%);
+}
+
+.card-image img {
+    border-radius: 50%;
+    width: 3rem;
+}
+
+.card-body {
+    text-align: start;
+}
+
+.card-body::before {
+    content: open-quote;
+}
+
+.card-body::after {
+    content: close-quote;
+}
+
+@media screen and (min-width: 768px) {
+    .card-container {
+        display: flex;
+    }
+}
+
+
